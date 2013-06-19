@@ -136,7 +136,7 @@ In this task, you will provision a new Windows Azure Active Directory Tenant fro
 
 	_Adding a new user to Active Directory_
 
-1.	In the dialog box, keep the default option of **New user in your organization** and type a username (e.g.: _newusername_). Click the check button to continue.
+1.	In the dialog box, keep the default option of **New user in your organization** and type a username (e.g.: _newusername_). Click **Next** to continue.
 
 	![filling new user name details](Images/filling-new-user-name-details.png?raw=true)
 
@@ -218,9 +218,9 @@ In this task, you will create a new MVC Application using **Visual Studio 2012**
 	>
 	> * **APP ID URI:** this parameter represents the identifier of your web application. Windows Azure AD uses this value at sign-on time, to determine that the authentication request is meant to enable a user to access this particular application - among all the ones registered - so that the correct settings can be applied. The APP ID URI must be unique within the directory tenant. A good default value for it is the APP URL value itself, however with that strategy the uniqueness constraint is not always easy to respect: developing the app on local hosting environments such as IIS Express and the Windows Azure Fabric Emulator tend to produce a restricted range of addresses that will be reused by multiple developers or even multiple projects from the same developer.
 
-1.	You successfully registered the application within your Active Directory tenant. In the application dashboard, copy the Federation Metadata Document URL from the **Enable single sign-on with Windows Azure AD** section. You will use it in the following tasks.
+1.	You successfully registered the application within your Active Directory tenant. In the application dashboard, copy the **Federation Metadata Document URL** from the **Enable single sign-on with Windows Azure AD** section. You will use it in the following tasks.
 
-	![copying federation metadata url](Images/copying-federation-metadata-url.png?raw=true)
+	![Copying Federation Metadata Url](Images/copying-federation-metadata-url.png?raw=true)
 
 	_Copying Federation Metadata URL_
 
@@ -396,7 +396,7 @@ In this task, you will add a Sign Out Controller to the MVC app. The web sign-on
 	(Code Snippet - _Introduction to Windows Azure AD - Ex1 Layout View_)
 
 	<!-- mark:2-9 -->
-	````C#
+	````CSHTML
 	<section id="login">
 		@if (Request.IsAuthenticated)
 		{  
@@ -449,7 +449,7 @@ To minimize downtime, it is a good idea to add self-healing logic directly in th
 	}
 	````
 
-	> **Note:** The **ValidatingIssuerNameRegistry** is the class used by the Identity and Access Tool to record information about which authorities are trusted, and what keys should be used to verify the tokens they issue. **WriteToConfig** is a static method that reads the issuer settings from a metadata document (in this case retrieved from config, where it was stored by the tool's first run, by the method's second line) and uses it to create or update the corresponding config section of the file at the path specified (constructed from the current **AppDomain** in the first line of the method).
+	> **Note:** The **ValidatingIssuerNameRegistry** is the class used by the Identity and Access Tool to record information about which authorities are trusted, and what keys should be used to verify the tokens they issue. **WriteToConfig** is a static method that reads the issuer settings from a metadata document (in this case retrieved from config, where it was stored in the tool's first run, by the method's second line) and uses it to create or update the corresponding config section of the file at the path specified (constructed from the current **AppDomain** in the first line of the method).
 
 1.	Insert a call to the **RefreshValidationSettings** method at the end of the **Application_Start** method.
 	
@@ -638,7 +638,7 @@ In this task you will update the **HomeController** of your MVC app to query the
 	}
 	````
 
-	> **Note:** It is recommended that the JWT token be cached by the application for subsequent calls – in this block, the JWT token expiration is checked before making a second Graph API call. If the token is expired, then a new token is acquired. If a call to the Graph API is made with an expired token, the following error response will be returned, and the client should request a new token.
+	> **Note:** It is recommended that the JWT token is cached by the application for subsequent calls – in this block, the JWT token expiration is checked before making a second Graph API call. If the token is expired, then a new token is acquired. If a call to the Graph API is made with an expired token, the following error response will be returned, and the client should request a new token.
 
 1. Now you will add a new view to display the list of users retrieved from the Active Directory tenant. To do this, expand the **Views** folder of the **ExpenseReport** project, right-click the **Home** folder and select **Add | View**. In the **Add View** dialog, set the view name to _Users_ and click **Add**.
 
