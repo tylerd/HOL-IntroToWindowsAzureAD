@@ -130,7 +130,7 @@ In this task, you will provision a new Windows Azure Active Directory Tenant fro
 
 	_Active Directory User List_
 
-1. Now you will add a new user to the directory. Click on the **Add User** button in the bottom bar.
+1. Now you will add a new user to the directory. Click the **Add User** button in the bottom bar.
 
 	![Add New User to Active Directory ](Images/add-new-user-to-active-directory.png?raw=true)
 
@@ -165,13 +165,13 @@ In this task, you will create a new MVC Application using **Visual Studio 2012**
 
 1. From the **File** menu, choose **New Project**.  
 
-1. In the **New Project dialog**, expand **Visual C#** in the **Installed** list and select **Web**. Choose the **ASP.NET MVC 4 Web Application** template, set the **Name** of the project to _ExpenseReport_ and set a location for the solution. Click **OK** to create the project.
+1. In the **New Project** dialog, expand **Visual C#** in the **Installed** list and select **Web**. Choose the **ASP.NET MVC 4 Web Application** template, set the **Name** of the project to _ExpenseReport_ and set a location for the solution. Click **OK** to create the project.
 
 	![Creating a new MVC app](Images/creating-a-new-mvc-app.png?raw=true)
 
 	_Creating a new MVC 4 Application in Visual Studio 2012_
 
-1. In the **New ASP.NET MVC 4 Project** window, select **Intranet Application**, make sure the view engine is set to **Razor** and then click **OK**.
+1. In the **New ASP.NET MVC 4 Project** window, select **Intranet Application**, make sure the view engine is set to **Razor**, and then click **OK**.
 
 	![Selecting MVC Intranet Application](Images/selecting-mvc-intranet-application.png?raw=true)
 
@@ -197,7 +197,7 @@ In this task, you will create a new MVC Application using **Visual Studio 2012**
 
 	_Adding an Application to Active Directory_
 
-	> **Note:** No application can take advantage of Windows Azure AD without having been registered: this is both for security reasons (only apps that the administrator approves of should be allowed) and practical considerations (interaction with Windows Azure AD entails use of specific open protocols, which in turn require the knowledge of key parameters describing the app).
+	> **Note:** No application can take advantage of Windows Azure AD if they are not registered: this is both for security reasons (only apps that are approved by the administrator should be allowed) and practical considerations (interaction with Windows Azure AD entails the use of specific open protocols, which in turn require the knowledge of key parameters describing the app).
 
 1.	Enter the name of your application (e.g.: _Expense Report_) and select **Single Sign-on** for the type of access. Click **Next**.
 
@@ -271,7 +271,7 @@ In this task, you will run the Identity and Access configuration to set up your 
 
 1.	Run the application by pressing **F5**.
 
-1. A security certificate warning will appear in your browser. This is expected behavior, click **Continue to this website (not recommended)**.
+1. A security certificate warning will appear in your browser. This is a expected behavior, click **Continue to this website (not recommended)**.
 
 	![SSL Certificate error](Images/ssl-certificate-error.png?raw=true)
 
@@ -302,13 +302,13 @@ In this task, you will run the Identity and Access configuration to set up your 
 
 In this task, you will add a Sign Out Controller to the MVC app. The web sign-on protocols in use today often include provisions for performing distributed sign out operations. Those are flows in which not only the current application cancels its current user's session, but it also reaches out to the authority to signal that a sign out command should be propagated to all the other applications' sessions that might have been established by the same authority.
 
-1. In Visual Studio, right-click the **Controllers** folder, select **Add** and then **Controller...**. Name it **SignOutController**, choose **Empty MVC Controller** as **Template** and click **Add**.
+1. In Visual Studio, right-click the **Controllers** folder, select **Add** and then **Controller**. Name it _SignOutController_, choose **Empty MVC Controller** as **Template** and click **Add**.
 
 	![Adding Sign Out Controller](Images/adding-sign-out-controller.png?raw=true)
 
 	_Adding a SignOutController to the project_
 
-1.	Right-click the **ExpenseReport** project node and select **Add Reference...**. Select the **Assemblies** node from the left pane, type _system.identitymodel.services_ in the **Search Assemblies** field, and select the corresponding assembly from the main list. Press **OK**.
+1.	Right-click the **ExpenseReport** project node and select **Add Reference**. Select the **Assemblies** node from the left pane, type _system.identitymodel.services_ in the **Search Assemblies** field, and select the corresponding assembly from the main list. Press **OK**.
 
 1. Open **SignOutController.cs** file and add the following directives.
 
@@ -705,7 +705,7 @@ In this task you will update the **HomeController** of your MVC app to query the
 
 1. Press **F5** to run the application. The single sign-on experience is the same as you saw in the previous exercise, requiring authentication using your Windows Azure AD credentials.
 
-1. Once you authenticated successfully using your credentials, select the **Users** tab from the top right menu.
+1. Once you have successfully authenticated using your credentials, select the **Users** tab from the top right menu.
 
 	![Users Action Link](Images/users-action-link.png?raw=true)
 
